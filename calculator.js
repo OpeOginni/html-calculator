@@ -1,18 +1,30 @@
-// Function that display value
-function dis(val) {
-  document.getElementById("result").value += val;
-}
+let question = document.querySelector(".leftcalc");
+let answer = document.querySelector(".rightcalc");
+let button = Array.from(document.querySelectorAll("button"));
 
-// Function that evaluates the digit and return result
-// Made use of the mathjs package
-function solve() {
-  let question = document.getElementById("result").value;
-  let answer = eval(question);
-  document.getElementById("result").value = answer;
-  return answer;
-}
+button.map(button => {
+  button.addEventListener("click", (e) => {
+    switch (e.target.innerText) {
+      case "Clr":
+        answer.innerText = " ";
+        question.innerText = " ";
+        break;
 
-// Function that clear the display
-function clr() {
-  document.getElementById("result").value = "";
-}
+        case "=":
+          
+          if((answer.innerText).includes("/0")){
+            answer.innerText = "Can't divide by Zero";
+          }
+          else{question.innerText = answer.innerText;
+            try{         
+               answer.innerText = eval(answer.innerText);
+              }catch{
+                answer.innerText = "Math Error";
+            }}break;
+
+
+      default:
+        answer.innerText += e.target.innerText;
+    }
+  });
+});
