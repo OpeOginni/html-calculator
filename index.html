@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="text/javascript" src="calculator.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Better Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Welcome to my Calculator</h1>
-    <table id="calc">
-      <tr>
-        <td colspan="3"><input type="text" id="result" /></td>
-        <td><input type="button" value="clear" onclick="clr()" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="1" onclick="dis('1')" /></td>
-        <td><input type="button" value="2" onclick="dis('2')" /></td>
-        <td><input type="button" value="3" onclick="dis('3')" /></td>
-        <td><input type="button" value="/" onclick="dis('/')" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="4" onclick="dis('4')" /></td>
-        <td><input type="button" value="5" onclick="dis('5')" /></td>
-        <td><input type="button" value="6" onclick="dis('6')" /></td>
-        <td><input type="button" value="*" onclick="dis('*')" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="7" onclick="dis('7')" /></td>
-        <td><input type="button" value="8" onclick="dis('8')" /></td>
-        <td><input type="button" value="9" onclick="dis('9')" /></td>
-        <td><input type="button" value="-" onclick="dis('-')" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="0" onclick="dis('0')" /></td>
-        <td><input type="button" value="." onclick="dis('.')" /></td>
-        <!-- solve function call function solve to evaluate value -->
-        <td><input type="button" value="=" onclick="solve()" /></td>
+    <div class="calculator_container">
+      <h3>Calculator!</h3>
 
-        <td><input type="button" value="+" onclick="dis('+')" /></td>
-      </tr>
-    </table>
-    <p>Web3Bridge JS CLINIC task</p>
-    <p>Made by Opeyemi</p>
+      <div class="calc">
+        <div class="leftcalc"></div>
+        <div class="rightcalc"></div>
+        <div class="calckeys">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button class="operator" data-action="add">+</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button class="operator" data-action="subtract">-</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button class="operator" data-action="multiply">*</button>
+          <button>0</button>
+          <button class="decimal" data-action="decimal">.</button>
+
+          <button class="equals" data-action="calculate">=</button>
+          <button class="operator" data-action="divide">/</button>
+
+          <button id="clear" data-action="clear">Clr</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="calculator.js"></script>
   </body>
 </html>
